@@ -1,9 +1,0 @@
-com\myshop\products\dao\ProductDAOImpl.class
-com\myshop\products\util\MyShopControllerAdvice.class
-com\myshop\products\service\ProductServiceImpl.class
-com\myshop\products\controller\ProductController.class
-com\myshop\products\model\ServiceResponse.class
-com\myshop\products\service\ProductService.class
-com\myshop\products\dao\ProductDAO.class
-com\myshop\products\model\Products.class
-com\myshop\products\ProductApp.class
