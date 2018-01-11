@@ -1,0 +1,3 @@
+<configuration debug="false" scan="true" scanPeriod="5 minutes">
+    <include resource="mycompany-logback-${spring.profiles.active}.xml"/>
+</configuration>

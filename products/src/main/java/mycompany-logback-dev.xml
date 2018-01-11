@@ -1,0 +1,49 @@
+<included>
+	<springProperty scope="context" name="APPLICATON_NAME" source="configuration.logging.application.name"></springProperty>
+	<springProperty scope="context" name="APPLICATON_LOG_DIRECTORY" source="configuration.logging.application.directory"></springProperty>
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<Pattern>
+				%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n
+			</Pattern>
+		</layout>
+	</appender>
+
+	<appender name="appender.mycompany" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<fileNamePattern>${APPLICATON_LOG_DIRECTORY}/${APPLICATON_NAME}/${APPLICATON_NAME}-logs-%d{dd-MM-yyyy}-%i.log</fileNamePattern>
+			<maxFileSize>10MB</maxFileSize>
+		</rollingPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<Pattern>
+				%d{yyyy-MM-dd HH:mm:ss} %mdc{requestId} %mdc{applicationName} %mdc{serviceName} %mdc{userId} [%thread] %-5level %logger{36} - %msg%n
+			</Pattern>
+		</layout>
+	</appender>
+
+	<appender name="appender.mycompany.performanceLogger" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<fileNamePattern>${APPLICATON_LOG_DIRECTORY}/${APPLICATON_NAME}/performance_${APPLICATON_NAME}-logs-%d{dd-MM-yyyy}-%i.log</fileNamePattern>
+			<maxFileSize>10MB</maxFileSize>
+		</rollingPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<Pattern>
+				%d{yyyy-MM-dd HH:mm:ss} %mdc{applicationName} %mdc{userId} %mdc{requestId} %mdc{resource} %mdc{totalTime}
+			</Pattern>
+		</layout>
+	</appender>
+
+	<logger name="com.myshop.products" level="debug" additivity="false">
+		<appender-ref ref="appender.mycompany" />
+	</logger>
+
+	<logger name="MyCompanyPerformanceLogger" level="INFO" additivity="false">
+		<appender-ref ref="appender.mycompany.performanceLogger" />
+	</logger>
+
+	<root level="INFO">
+		<!-- <appender-ref ref="STDOUT" /> -->
+		<appender-ref ref="appender.mycompany" />
+	</root>
+</included>

@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: myshopeurekaserver
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: Windows User
+Implementation-Vendor-Id: com.mycompany
+Build-Jdk: 1.8.0_144
+Implementation-URL: http://maven.apache.org/myshopeurekaserver
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+Main-Class: org.myshop.eurekaserver.EurekaServerApp
+
