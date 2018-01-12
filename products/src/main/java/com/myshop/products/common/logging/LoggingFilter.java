@@ -28,14 +28,17 @@ public class LoggingFilter extends OncePerRequestFilter {
 		MDC.put("applicationName", "myCompanyProductApp");
 		MDC.put("serviceName", "Product_Service");
 		
-		HttpServletRequest req = new ContentCachingRequestWrapper(request);
-		HttpServletResponse resp = new ContentCachingResponseWrapper(response);
+		ContentCachingRequestWrapper req = new ContentCachingRequestWrapper(request);
+		ContentCachingResponseWrapper resp = new ContentCachingResponseWrapper(response);
 		
 		filterChain.doFilter(req, resp);
 		
 		long totaltime = System.currentTimeMillis() - startTime;
 		MDC.put("totalTime", Long.toHexString(threadId));
 		
+		MDC.clear();
+		
+		resp.copyBodyToResponse();
 	}
 	
 }
