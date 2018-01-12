@@ -1,0 +1,5 @@
+*.class
+*.java
+*.project
+*.classpath
+target/**
