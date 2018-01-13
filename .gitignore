@@ -2,9 +2,14 @@
 *.java
 *.project
 *.classpath
-target/**
+**/target/**
 *.log
 *.log
 products/APPLICATON_LOG_DIRECTORY_IS_UNDEFINED/APPLICATON_NAME_IS_UNDEFINED/APPLICATON_NAME_IS_UNDEFINED-logs-10-01-2018-0.log
 products/APPLICATON_LOG_DIRECTORY_IS_UNDEFINED/APPLICATON_NAME_IS_UNDEFINED/APPLICATON_NAME_IS_UNDEFINED-logs-09-01-2018-0.log
 products/APPLICATON_LOG_DIRECTORY_IS_UNDEFINED/APPLICATON_NAME_IS_UNDEFINED/performance_APPLICATON_NAME_IS_UNDEFINED-logs-10-01-2018-0.log
+myshopeurekaserver/target/classes/application.yml
+myshopeurekaserver/target/classes/application.yml
+myshopeurekaserver/target/classes/META-INF/maven/com.mycompany/myshopeurekaserver/pom.properties
+products/target/m2e-wtp/web-resources/META-INF/maven/com.mycompany/products/pom.properties
+products/target/m2e-wtp/web-resources/META-INF/maven/com.mycompany/products/pom.xml
