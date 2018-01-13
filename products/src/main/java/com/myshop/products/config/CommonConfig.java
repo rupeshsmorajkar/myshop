@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.ServletComponentScan;
+import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -12,6 +13,7 @@ import org.springframework.context.annotation.Configuration;
 import com.myshop.products.common.logging.LoggingFilter;
 
 @Configuration
+@EnableCircuitBreaker
 @ServletComponentScan(basePackages="com.myshop.products")
 @ComponentScan(basePackages= { "com.myshop.products" })
 public class CommonConfig {
