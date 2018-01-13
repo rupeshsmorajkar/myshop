@@ -36,7 +36,30 @@ configuration:
     application:
       name: mycompany
       directory: c:/logs
-      
 
-     
+endpoints:
+  enabled: false
+  dump:
+    enabled: true
+    id: threaddump
+  metrics:
+    enabled: true
+  health:
+    enabled: true
+  trace:
+    enabled: true
+  actuator:
+    enabled: true
+  cors:
+    allowed-origins: http://localhost:8081
+    allowed-methods: GET
+
+management:
+  context-path: /appmanagement
+  port: 8082
+#  port: -1 -- disable
+
+  
+
+
 
